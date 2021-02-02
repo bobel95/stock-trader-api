@@ -1,0 +1,14 @@
+### Get all stocks
+curl http://localhost:8080/stocks | jq
+
+### Get one stock
+curl http://localhost:8080/stocks/AAPL | jq
+
+### Add new stock
+curl -H "Content-Type: application/json" -X POST -d '{"name": "NOU", "price": 120.1}' http://localhost:8080/stocks
+
+### Update stock
+curl -i -H "Content-Type: application/json" -X PUT -d '{"name": "AAPL", "price": 2.2}' http://localhost:8080/stocks/AAPL
+
+### Delete stock
+curl -i -H "Content-Type: application/json" -X DELETE -d '{"name": "AAPL", "price": 1.0}' http://localhost:8080/stocks
